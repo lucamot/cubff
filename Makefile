@@ -27,7 +27,7 @@ else
 	FLAGS := ${COMMON_FLAGS} -Wall -fPIC
 
 	ifeq (${MACOS}, 1)
-		FLAGS += -Xclang -fopenmp
+		FLAGS += -Xclang -fopenmp -L/opt/homebrew/opt/libomp/lib -I/opt/homebrew/opt/libomp/include
 		LINK_FLAGS += -lomp -undefined dynamic_lookup
 	else
 		FLAGS += -fopenmp
